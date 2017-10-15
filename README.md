@@ -1,8 +1,10 @@
 # Emoji::Validator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/emoji/validator`. To experiment with that code, run `bin/console` for an interactive prompt.
+We all love emojis, but sometimes unfortunately we can't handle them. Use these two validators to seamlessly ensure they don't end up messing up with your models.
 
-TODO: Delete this and the text above, and describe your gem
+Supports ActiveModel > 4
+
+Depends on the [unicode-emoji](https://rubygems.org/gems/unicode-emoji) gem.
 
 ## Installation
 
@@ -22,7 +24,32 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Two validators are provided in the gem:
+
+###Disallow emojis on all attributes for your model
+Use the `NoEmojiAnywhereValidator` to make all attributes of your ActiveRecord class automatically validate against emojis:
+```ruby
+class Person < ApplicationRecord
+  include Emoji::Validator::NoEmojiAnywhereValidator
+end
+
+person = Person.new(first_name: "😃", last_name: "😃")
+person.valid? #false
+person.errors.count #2
+```
+
+###Disallow emojis on single attributes for your model
+Use the `NoEmojiValidator` to make single attributes of your ActiveRecord class validate against emojis:
+```ruby
+class Person < ApplicationRecord
+  validates :first_name, no_emoji: true
+end
+
+person = Person.new(first_name: "John", last_name: "😃")
+person.valid? #true
+person.first_name = "😃"
+person.valid? #false
+```
 
 ## Development
 
