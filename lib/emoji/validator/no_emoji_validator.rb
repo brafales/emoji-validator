@@ -2,16 +2,16 @@
 module Emoji
   module Validator
     # Validate an attribute against emojis
-    # ```ruby
-    # class Person < ApplicationRecord
-    #   validates :first_name, no_emoji: true
-    # end
     #
-    # person = Person.new(first_name: "John", last_name: "😃")
-    # person.valid? #true
-    # person.first_name = "😃"
-    # person.valid? #false
-    # ```
+    #   class Person < ApplicationRecord
+    #     validates :first_name, no_emoji: true
+    #   end
+    #
+    #   person = Person.new(first_name: "John", last_name: "😃")
+    #   person.valid? #true
+    #   person.first_name = "😃"
+    #   person.valid? #false
+    #
     class NoEmojiValidator < ActiveModel::EachValidator
       def validate_each(record, attribute, value)
         return if value.match(Unicode::Emoji::REGEX_ANY).nil?
