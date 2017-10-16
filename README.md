@@ -1,5 +1,9 @@
 # Emoji::Validator
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/f8a989a176a6d58701bb/maintainability)](https://codeclimate.com/github/brafales/emoji-validator/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f8a989a176a6d58701bb/test_coverage)](https://codeclimate.com/github/brafales/emoji-validator/test_coverage)
+[![Build Status](https://travis-ci.org/brafales/emoji-validator.svg?branch=master)](https://travis-ci.org/brafales/emoji-validator)
+
 We all love emojis, but sometimes unfortunately we can't handle them. Use these two validators to seamlessly ensure they don't end up messing up with your models.
 
 Supports ActiveModel > 4
