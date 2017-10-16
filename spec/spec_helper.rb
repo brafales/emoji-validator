@@ -1,5 +1,7 @@
 require "bundler/setup"
 require "emoji/validator"
+require "active_record"
+
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -12,3 +14,17 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+#Set up ActiveRecord database for tests
+active_record = ActiveRecord::Base.establish_connection(
+    :adapter  => "sqlite3",
+    :database => ":memory:"
+)
+
+active_record.connection.execute <<-SQL
+  create table test_no_emoji_anywhere_validators (
+    first_name varchar(30),
+    last_name text,
+    val int
+  );
+SQL
