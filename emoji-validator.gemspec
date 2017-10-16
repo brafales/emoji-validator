@@ -3,7 +3,6 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'emoji/validator/version'
 
-# rubocop:disable Metrics/BlockLength
 # rubocop:disable Metrics/LineLength
 Gem::Specification.new do |spec|
   spec.name                  = 'emoji-validator'
@@ -36,5 +35,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'rubocop'
 end
-# rubocop:enable Metrics/BlockLength
 # rubocop:enable Metrics/LineLength
