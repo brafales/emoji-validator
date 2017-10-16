@@ -1,13 +1,13 @@
-require "bundler/setup"
-require "emoji/validator"
-require "active_record"
+require 'bundler/setup'
+require 'emoji/validator'
+require 'active_record'
 
-require "simplecov"
+require 'simplecov'
 SimpleCov.start
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
-  config.example_status_persistence_file_path = ".rspec_status"
+  config.example_status_persistence_file_path = '.rspec_status'
 
   # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!
@@ -17,10 +17,10 @@ RSpec.configure do |config|
   end
 end
 
-#Set up ActiveRecord database for tests
+# Set up ActiveRecord database for tests
 active_record = ActiveRecord::Base.establish_connection(
-    :adapter  => "sqlite3",
-    :database => ":memory:"
+  adapter: 'sqlite3',
+  database: ':memory:'
 )
 
 active_record.connection.execute <<-SQL
