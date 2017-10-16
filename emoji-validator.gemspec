@@ -6,22 +6,23 @@ require 'emoji/validator/version'
 # rubocop:disable Metrics/BlockLength
 # rubocop:disable Metrics/LineLength
 Gem::Specification.new do |spec|
-  spec.name          = 'emoji-validator'
-  spec.version       = Emoji::Validator::VERSION
-  spec.authors       = ['Bernat Rafales']
-  spec.email         = ['brafales@gmail.com']
+  spec.name                  = 'emoji-validator'
+  spec.version               = Emoji::Validator::VERSION
+  spec.authors               = ['Bernat Rafales']
+  spec.email                 = ['brafales@gmail.com']
 
-  spec.summary       = 'ActiveModel validator for emojis'
-  spec.description   = 'ActiveModel validator for emojis, powered by the unicode-emoji gem, to ensure your Models do not contain characters you may not be able to handle'
-  spec.homepage      = 'https://github.com/brafales/emoji-validator'
-  spec.license       = 'MIT'
+  spec.summary               = 'ActiveModel validator for emojis'
+  spec.description           = 'ActiveModel validator for emojis, powered by the unicode-emoji gem, to ensure your Models do not contain characters you may not be able to handle'
+  spec.homepage              = 'https://github.com/brafales/emoji-validator'
+  spec.license               = 'MIT'
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
-  spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ['lib']
+  spec.bindir                = 'exe'
+  spec.executables           = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.required_ruby_version = '>= 2.2.8'
+  spec.require_paths         = ['lib']
 
   spec.add_dependency 'unicode-emoji'
   spec.add_dependency 'activemodel', '>= 4'
