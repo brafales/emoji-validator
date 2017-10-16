@@ -30,7 +30,7 @@ Or install it yourself as:
 
 Two validators are provided in the gem:
 
-###Disallow emojis on all attributes for your model
+### Disallow emojis on all attributes for your model
 Use the `NoEmojiAnywhereValidator` to make all attributes of your ActiveRecord class automatically validate against emojis:
 ```ruby
 class Person < ApplicationRecord
@@ -42,7 +42,7 @@ person.valid? #false
 person.errors.count #2
 ```
 
-###Disallow emojis on single attributes for your model
+### Disallow emojis on single attributes for your model
 Use the `NoEmojiValidator` to make single attributes of your ActiveRecord class validate against emojis:
 ```ruby
 class Person < ApplicationRecord
