@@ -14,7 +14,7 @@ module Emoji
     #
     class NoEmojiValidator < ActiveModel::EachValidator
       def validate_each(record, attribute, value)
-        return if value.match(Unicode::Emoji::REGEX_ANY).nil?
+        return if value.match(Unicode::Emoji::REGEX_VALID).nil?
         record.errors.add(attribute, :has_emojis)
       end
     end
