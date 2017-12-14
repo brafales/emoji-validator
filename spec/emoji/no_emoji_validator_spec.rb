@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 class TestNoEmojiValidator
@@ -8,6 +10,12 @@ class TestNoEmojiValidator
 end
 
 RSpec.describe Emoji::Validator::NoEmojiValidator do
+  it 'ignore nil values' do
+    test_object = TestNoEmojiValidator.new(first_name: nil, last_name: '😃')
+
+    expect(test_object.valid?).to eq(true)
+  end
+
   it 'Validates fields that contain emojis' do
     test_object = TestNoEmojiValidator.new(first_name: '😃',
                                            last_name: '😃')

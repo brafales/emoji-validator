@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'unicode/emoji'
 require 'active_model'
 require 'emoji/validator/version'

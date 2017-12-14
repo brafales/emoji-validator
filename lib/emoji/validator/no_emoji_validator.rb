@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # rubocop:disable Style/AsciiComments
 module Emoji
   module Validator
@@ -14,6 +16,7 @@ module Emoji
     #
     class NoEmojiValidator < ActiveModel::EachValidator
       def validate_each(record, attribute, value)
+        return if value.nil?
         return if value.match(Unicode::Emoji::REGEX_VALID).nil?
         record.errors.add(attribute, :has_emojis)
       end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # rubocop:disable Style/AsciiComments
 module Emoji
   module Validator
