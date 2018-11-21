@@ -1,7 +1,6 @@
-
 # frozen_string_literal: true
 
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'emoji/validator/version'
 
@@ -22,7 +21,7 @@ Gem::Specification.new do |spec|
   end
   spec.bindir                = 'exe'
   spec.executables           = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.required_ruby_version = ['>= 2.2.8', '< 2.5.0']
+  spec.required_ruby_version = ['>= 2.2.8', '< 2.6.0']
   spec.require_paths         = ['lib']
 
   spec.add_dependency 'activemodel', '>= 4'

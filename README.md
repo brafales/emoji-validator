@@ -8,7 +8,7 @@ We all love emojis, but sometimes unfortunately we can't handle them. Use these 
 
 Supports ActiveModel > 4
 
-Tested against Ruby 2.3 and 2.4
+Tested against Ruby 2.3, 2.4, 2.5 and 2.5.1
 
 Depends on the [unicode-emoji](https://rubygems.org/gems/unicode-emoji) gem.
 

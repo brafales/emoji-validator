@@ -18,6 +18,7 @@ module Emoji
       def validate_each(record, attribute, value)
         return if value.nil?
         return if value.match(Unicode::Emoji::REGEX_VALID).nil?
+
         record.errors.add(attribute, :has_emojis)
       end
     end
