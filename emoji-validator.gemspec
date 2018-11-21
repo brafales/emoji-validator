@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   end
   spec.bindir                = 'exe'
   spec.executables           = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.required_ruby_version = ['>= 2.2.8', '< 2.5.0']
+  spec.required_ruby_version = ['>= 2.2.8', '< 2.6.0']
   spec.require_paths         = ['lib']
 
   spec.add_dependency 'activemodel', '>= 4'
