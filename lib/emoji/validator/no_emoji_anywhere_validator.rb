@@ -20,6 +20,7 @@ module Emoji
         base.class_eval do
           columns_hash.each do |k, v|
             next unless %i[string text].include?(v.type)
+
             validates k, no_emoji: true
           end
         end
