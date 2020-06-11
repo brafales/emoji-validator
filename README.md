@@ -8,7 +8,7 @@ We all love emojis, but sometimes unfortunately we can't handle them. Use these 
 
 Supports ActiveModel > 4
 
-Tested against Ruby 2.3, 2.4, 2.5 and 2.6
+Tested against Ruby 2.5, 2.6 and 2.7
 
 Depends on the [unicode-emoji](https://rubygems.org/gems/unicode-emoji) gem.
 
@@ -22,18 +22,24 @@ gem 'emoji-validator'
 
 And then execute:
 
-    $ bundle
+```bash
+bundle
+```
 
 Or install it yourself as:
 
-    $ gem install emoji-validator
+```bash
+gem install emoji-validator
+```
 
 ## Usage
 
 Two validators are provided in the gem:
 
 ### Disallow emojis on all attributes for your model
+
 Use the `NoEmojiAnywhereValidator` to make all attributes of your ActiveRecord class automatically validate against emojis:
+
 ```ruby
 class Person < ActiveRecord::Base
   include Emoji::Validator::NoEmojiAnywhereValidator
@@ -45,7 +51,9 @@ person.errors.count #2
 ```
 
 ### Disallow emojis on single attributes for your model
+
 Use the `NoEmojiValidator` to make single attributes of your ActiveRecord class validate against emojis:
+
 ```ruby
 class Person < ApplicationRecord
   validates :first_name, no_emoji: true
