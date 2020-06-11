@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   end
   spec.bindir                = 'exe'
   spec.executables           = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.required_ruby_version = '>= 2.3.8'
+  spec.required_ruby_version = '>= 2.5.8'
   spec.require_paths         = ['lib']
 
   spec.add_dependency 'activemodel', '>= 4'
@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'activerecord', '>= 4'
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'codeclimate-test-reporter'
-  spec.add_development_dependency 'rake', '~> 11'
+  spec.add_development_dependency 'rake', '>= 12.3.3'
   spec.add_development_dependency 'rspec', '~> 3'
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'simplecov'
