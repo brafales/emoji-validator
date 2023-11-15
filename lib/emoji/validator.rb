@@ -5,6 +5,7 @@ require 'active_model'
 require 'emoji/validator/version'
 require 'emoji/validator/no_emoji_anywhere_validator'
 require 'emoji/validator/no_emoji_validator'
+require 'emoji/validator/emoji_validator'
 
 module Emoji
   # <tt>ActiveModel</tt> and <tt>ActiveRecord</tt> validators to prevent
